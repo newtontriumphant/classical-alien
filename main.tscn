@@ -398,7 +398,6 @@ tile_set = SubResource("TileSet_4qxbk")
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1865116282]
 stream = ExtResource("4_lquwl")
-autoplay = true
 
 [node name="WinMusic" type="AudioStreamPlayer" parent="." unique_id=235533357]
 stream = ExtResource("5_7mycd")

@@ -17,11 +17,22 @@ const CROSSFADE_TIME = 1.0
 var dead := false
 var key_taken := false
 var won := false
+var music_started := false
 var hidden_win_cells: Array[Dictionary] = []
 
 func _ready() -> void:
 	$HazardDetector.body_entered.connect(_on_hazard_entered)
 	_hide_win_tiles()
+
+func _unhandled_input(_event: InputEvent) -> void:
+	_start_music()
+
+func _start_music() -> void:
+	if music_started:
+		return
+	music_started = true
+	music.volume_db = MUSIC_VOLUME_DB
+	music.play()
 
 func _hide_win_tiles() -> void:
 	for cell in tilemap.get_used_cells():
